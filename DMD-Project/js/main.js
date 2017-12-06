@@ -142,7 +142,7 @@ function downloadSound(response,id) {
 	//create blob object url and add it to html with html5 audio element
 	let blob = new Blob([response],{type:'audio/wav'});
 	let dwn = window.URL.createObjectURL(blob);
-	document.getElementById(id).innerHTML+="<div class=\"contr\"id=\"controller_"+id+"\"><audio controls><source src=\""+dwn+"\" type=\"audio/wav\"></source></audio><div onclick=select(event) class=\"select_btn\"id=btn_"+id+">Choose this sound</div>";
+	document.getElementById(id).innerHTML+="<div class=\"contr\"id=\"controller_"+id+"\"><audio controls><source src=\""+dwn+"\" type=\"audio/wav\"></source></audio><div onclick=selectsound(event) class=\"select_btn\"id=btn_"+id+">Choose this sound</div>";
 }
 
 
