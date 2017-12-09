@@ -1,0 +1,99 @@
+/*css for search box*/
+#query {
+	width: 300px;
+    height: 40px;
+    padding-right: 50px;
+	padding-left:10px;
+	border: 1px solid #69605d;
+    border-radius: 25px 12px 12px 25px;
+	background-color:#d2cfce;
+}
+
+/*sets placeholder text of search to black and indents where the typing starts*/
+input#query::-webkit-input-placeholder {
+	color: black !important;
+	text-indent:5;
+}
+
+/*removes the outline when clicking items*/
+*:focus {
+    outline: none;
+}
+
+/*css for the go button next to search box*/
+#GO{
+    margin-left: -50px;
+    height: 40px;
+    width: 50px;
+	border:0px solid #69605d;
+	background-color:#69605d;
+	color:white;
+	border-radius:4px 12px 12px 0px;
+}
+
+/*css for go button next to search box when mouse hovers over it*/
+#GO:hover{
+    margin-left: -50px;
+    height: 40px;
+    width: 50px;
+	border:0px solid gray;
+	background-color:gray;
+	color:white;
+	border-radius:4px 12px 12px 0px;
+}
+
+/*this is the css for a div that is the parent of the search box, go button and all filters and file upload*/
+#search_bar {
+	float:left;
+	margin:30px;
+}
+
+/*this is the css for a div that holds all of the search results that are added from the javascript function processSearch()*/
+#output {
+	float:left;
+	border-radius:4px;
+    box-sizing: border-box;
+
+} 
+
+/* this is the css for a div that holds the audio controller after clicking a sound name*/
+.contr {
+	display:block;
+}
+
+/*this is the css for the buttons that say "Use this sound" */
+.select_btn {
+	padding:2px;
+	background:#69605d;
+	color:white;
+}
+
+/*this is the css for a class that contains all of the search results added from the processSearch() function*/
+.results {
+	cursor:pointer;	
+}
+
+/*this is the css for a class that contains all of the search results added from the processSearch() function*/
+.results:hover {
+	cursor:pointer;
+	background-color:#d2cfce;
+}
+
+/* tonejs added css for value of slider*/
+.sliderStyle {
+	float: left;
+	
+} 
+
+/*tonejs slider number*/
+.slidervalue {
+	float:right;
+}
+
+/*current sound name over the tonejs box*/
+#soundname {
+	float:right;
+	margin:10px;
+}
+
+
