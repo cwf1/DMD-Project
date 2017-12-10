@@ -3,11 +3,11 @@
 	<!-- my js files and css file-->
 	<script src="js/FreesoundAuth.js"></script>
 	<script src="js/main.js"></script>
-	<link rel="stylesheet" type="text/css" href="css/FreesoundStyles.css"> 
-	<link rel="stylesheet" type="text/css" href="css/tonejs.css"> 
-	
+	<link rel="stylesheet" type="text/css" href="css/FreesoundStyles.css">
+	<link rel="stylesheet" type="text/css" href="css/tonejs.css">
+
 	<script src="js/jquery.min.js"></script>
-	
+
 	<!-- tonejs files-->
 	<script src="js/Tone.js"></script>
 	<script src="js/draggabilly.js"></script>
@@ -17,30 +17,30 @@
 
 
 <body background="images/dust_scratches.png">
+    <div id="Search">
+	   <div id="search_bar">
+    		<input type="text" placeholder="type here to search for a sound.." id="query">
+    		<input type="submit" value="GO" onclick="search()" id="GO">
 
-	<div id="search_bar">
-		<input type="text" placeholder="type here to search for a sound.." id="query">
-		<input type="submit" value="GO" onclick="search()" id="GO">
-		
-		<div>Filetype: wav<input type="radio" name="filter" id="wav" value="wav">
-					   all<input type="radio" name="filter"  value="all" checked="checked">
-		</div>
-		
-		<div>or upload your own: <input type="file" id="files" name="file" />
-		</div>
-		
+    		<div>Filetype: wav<input type="radio" name="filter" id="wav" value="wav">
+    					   all<input type="radio" name="filter"  value="all" checked="checked">
+    		</div>
+
+    		<div>or upload your own: <input type="file" id="files" name="file" />
+    		</div>
+
 		<!-- this is where search results go -->
 		<div id="output">
 		</div>
-		
+
 	</div>
-	
+
 	<!-- this is where tonejs interface is loaded -->
 	<div id="Content">
 		<div id="Sliders">
 		</div>
 	</div>
-	
+
 </body>
 <script>
 //build interface initially to show to user but give it blank data to trigger the freeze css
@@ -58,4 +58,3 @@ document.getElementById('files').addEventListener('change', handleFileSelect, fa
 
 
 </html>
-
