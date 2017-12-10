@@ -1,5 +1,6 @@
 body {
     display:flex;
+    font-family: "Helvetica Neue", Arial ,sans-serif;
 }
 
 /*css for search box*/
@@ -63,7 +64,7 @@ input#query::-webkit-input-placeholder {
 #Content {
     width: 100%;
     flex-basis: 70%;
-    margin: 0;
+    margin: 0 !important;
 }
 #Search {
     flex-basis: 30%;
@@ -108,4 +109,34 @@ input#query::-webkit-input-placeholder {
 #soundname {
 	float:right;
 	margin:10px;
+}
+
+.filetype label {
+    float:left;
+    width:50px;
+    margin:4px;
+    background-color:#EFEFEF;
+    border-radius:4px;
+    border:1px solid #D0D0D0;
+    overflow:auto;
+}
+
+.filetype label span {
+    text-align:center;
+    font-size: 15px;
+    padding:5px 0px;
+    display:block;
+}
+
+.filetype label input {
+    position:absolute;
+    top:-20px;
+}
+
+.filetype input:checked + span {
+    background-color:#404040;
+    color:#F7F7F7;
+}
+.filetype .wav, .filetype .all {
+	background-color: red;
 }
