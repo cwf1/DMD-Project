@@ -22,9 +22,20 @@
     		<input type="text" placeholder="type here to search for a sound.." id="query">
     		<input type="submit" value="GO" onclick="search()" id="GO">
 
-    		<div class="filetype">
-				Filetype: <label class="wav"><input type="radio" name="toggle"><span>wav</span></label>
-				<label class="all"><input type="radio" name="toggle"><span>all</span></label>
+			<div class="filetype">
+			    <div class="ft-text">Filetype: </div>
+			    <div class="ft-btn">
+					<label class="wav">
+						<input type="radio" name="toggle">
+						<span>wav</span>
+					</label>
+				</div>
+				<div class="ft-btn">
+					<label class="all">
+						<input type="radio" name="toggle">
+						<span>all</span>
+					</label>
+				</div>
     		</div>
 
     		<div class="upload">or upload your own: <input type="file" id="files" name="file" />

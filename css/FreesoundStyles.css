@@ -10,7 +10,7 @@ body {
     padding-right: 50px;
 	padding-left:10px;
 	border: 1px solid #69605d;
-    border-radius: 25px 12px 12px 25px;
+    border-radius: 3px;
 	background-color:#d2cfce;
 }
 
@@ -33,7 +33,7 @@ input#query::-webkit-input-placeholder {
 	border:0px solid #69605d;
 	background-color:#69605d;
 	color:white;
-	border-radius:4px 12px 12px 0px;
+	border-radius:0 3px 3px 0;
 }
 
 /*css for go button next to search box when mouse hovers over it*/
@@ -111,6 +111,11 @@ input#query::-webkit-input-placeholder {
 	margin:10px;
 }
 
+.filetype {
+    display: flex;
+    align-items: center;
+}
+
 .filetype label {
     float:left;
     width:50px;
@@ -134,9 +139,10 @@ input#query::-webkit-input-placeholder {
 }
 
 .filetype input:checked + span {
-    background-color:#404040;
+    background-color:lightblue;
     color:#F7F7F7;
 }
 .filetype .wav, .filetype .all {
-	background-color: red;
+	background-color: #404040;
+	color: #F7F7F7;
 }
