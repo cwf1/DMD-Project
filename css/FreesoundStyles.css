@@ -1,3 +1,7 @@
+body {
+    display:flex;
+}
+
 /*css for search box*/
 #query {
 	width: 300px;
@@ -53,8 +57,18 @@ input#query::-webkit-input-placeholder {
 	float:left;
 	border-radius:4px;
     box-sizing: border-box;
+	margin: 30px;
+}
 
-} 
+#Content {
+    width: 100%;
+    flex-basis: 70%;
+    margin: 0;
+}
+#Search {
+    flex-basis: 30%;
+    background-color: #eee;
+}
 
 /* this is the css for a div that holds the audio controller after clicking a sound name*/
 .contr {
@@ -70,7 +84,7 @@ input#query::-webkit-input-placeholder {
 
 /*this is the css for a class that contains all of the search results added from the processSearch() function*/
 .results {
-	cursor:pointer;	
+	cursor:pointer;
 }
 
 /*this is the css for a class that contains all of the search results added from the processSearch() function*/
@@ -82,8 +96,8 @@ input#query::-webkit-input-placeholder {
 /* tonejs added css for value of slider*/
 .sliderStyle {
 	float: left;
-	
-} 
+
+}
 
 /*tonejs slider number*/
 .slidervalue {
@@ -95,5 +109,3 @@ input#query::-webkit-input-placeholder {
 	float:right;
 	margin:10px;
 }
-
-
