@@ -105,7 +105,7 @@ function processSearch(response) {
 	 searchResults = responseData.results;
 	 results_html="";
 	for (i in responseData.results)
-		results_html+="<p onclick=\"nameClicked(event)\" id="+responseData.results[i].id+" class=results><span>"+responseData.results[i].name+"</span></p>";
+		results_html+="<p onclick=\"nameClicked(event)\" id="+responseData.results[i].id+" class=results>"+responseData.results[i].name+"</p>";
 
 	document.getElementById("output").innerHTML=results_html;
 }
