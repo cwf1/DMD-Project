@@ -60,7 +60,7 @@ input#query::-webkit-input-placeholder {
 	float:left;
 	border-radius:4px;
     box-sizing: border-box;
-	margin: 30px;
+	margin: 0px 20px 20px;
 }
 
 #Content {
@@ -88,12 +88,35 @@ input#query::-webkit-input-placeholder {
 /*this is the css for a class that contains all of the search results added from the processSearch() function*/
 .results {
 	cursor:pointer;
+    border-left: #eee solid 3px;
+    padding: 8px 10px;
+    background-color: #ddd;
 }
-
+.contr {
+    margin-top: 8px;
+}
 /*this is the css for a class that contains all of the search results added from the processSearch() function*/
 .results:hover {
-	cursor:pointer;
 	background-color:#d2cfce;
+}
+.results:hover, .results.active {
+	cursor:pointer;
+    border-left: #177BCE solid 3px;
+}
+.results.active {
+	background-color: #C7E5FC;
+}
+
+.select_btn {
+    padding: 5px 8px;
+    background: #217DCB;
+    color: white;
+    margin-top: 5px;
+    display: inline-block;
+}
+
+.select_btn:hover {
+	background-color: #086BBE;
 }
 
 /* tonejs added css for value of slider*/
