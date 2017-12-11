@@ -117,6 +117,7 @@ function nameClicked(e) {
 
 	let auth = true;
 
+	console.log("Section updated.");
 	//if name was already clicked, return to unclicked state
 	if (document.getElementById(id).innerHTML.includes("audio")) {
 		$("#controller_"+id).remove();
