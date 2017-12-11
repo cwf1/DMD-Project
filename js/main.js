@@ -105,7 +105,7 @@ function processSearch(response) {
 	 searchResults = responseData.results;
 	 results_html="";
 	for (i in responseData.results)
-		results_html+="<p onclick=\"nameClicked(event)\" id="+responseData.results[i].id+" class=results>"+responseData.results[i].name+"</p>";
+		results_html+="<p onclick=\"nameClicked(event)\" id="+responseData.results[i].id+" class=results><span class=audioname>"+responseData.results[i].name+"</span></p>";
 
 	document.getElementById("output").innerHTML=results_html;
 }
@@ -121,12 +121,12 @@ function nameClicked(e) {
 	//if name was already clicked, return to unclicked state
 	if (document.getElementById(id).innerHTML.includes("audio")) {
 		$("#controller_"+id).remove();
-        $(this).removeClass("active");
+        $("p#"+id).removeClass("active");
 	//otherwise send request to download sound and add loading gif
 	} else {
 		//this check prevents multiple clicks from loading multiple of the same sound
 		if (!(document.getElementById(id).innerHTML.includes("loading.gif"))) {
-            $(this).addClass("active");
+            $("p#"+id).addClass("active");
 			createRequest(auth,downloadSound,id,undefined);
 			let loading_text = "<div id=\"loading_sound\"><br><img width=50 height=50 src=\"images/loading.gif\"></img></div>"
 			document.getElementById(id).innerHTML+=loading_text;
