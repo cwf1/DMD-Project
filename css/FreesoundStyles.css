@@ -44,7 +44,6 @@ input#query::-webkit-input-placeholder {
 	border:0px solid gray;
 	background-color:gray;
 	color:white;
-	border-radius:4px 12px 12px 0px;
 }
 
 /*this is the css for a div that is the parent of the search box, go button and all filters and file upload*/
