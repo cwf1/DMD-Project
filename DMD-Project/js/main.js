@@ -10,13 +10,13 @@ authenticate();
 
 //these are public because only one search is done at a time and only one player is active at a time
 var player;
-var searchResults; 
+var searchResults;
 
 
 
 //this handles uploading a sound file and then passes it to the buildplayer function to use tonejs with it
 function handleFileSelect(evt) {
-	if (player) 
+	if (player)
 		player.stop();
     evt.stopPropagation();
     evt.preventDefault();
@@ -27,8 +27,8 @@ function handleFileSelect(evt) {
 			//remove tonejs interface to reload it with this sound file
 			document.getElementById("Content").innerHTML = "";
 			document.getElementById("Content").innerHTML += "<div id=\"Sliders\"></div>";
-			
-			buildplayer(url,file.name);  
+
+			buildplayer(url,file.name);
 		}else {
 			alert("This is not a suitable file type!");
 			return -1;
@@ -39,18 +39,18 @@ function handleFileSelect(evt) {
 
 //searches API and returns and parses/writes JSON response to html
 function search() {
-	
-	if (player) 
+
+	if (player)
 		player.stop();
 	$("#output").css("border","auto solid #69605d");
-		
+
 	//clear the previous search data
 	document.getElementById("output").innerHTML = "";
 
 	//get the search query from the search box
 	let term = document.getElementById("query").value;
 	let filter = document.getElementById("wav").checked ? "wav" : null;
-	//set auth to false because we defined auth = true to be the bearer auth token 
+	//set auth to false because we defined auth = true to be the bearer auth token
 	let auth = false;
 	//finally pass parameters to the create request function
 	createRequest(auth,processSearch,undefined,term,filter);
@@ -65,34 +65,34 @@ function createRequest(Auth,callback,id,query,filter) {
 		//we are downloading a sound
 		let xhr=new XMLHttpRequest();
 		let uri = "https://freesound.org/apiv2/sounds/"+id+"/download/";
-		xhr.open("GET",uri);	
+		xhr.open("GET",uri);
 		xhr.responseType='blob';
 		xhr.setRequestHeader('Authorization','Bearer '+bearerAuth);
 		xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded;charset=UTF-8');
-		
+
 		xhr.addEventListener('load', function(e) {
-			if (xhr.readyState==4&&xhr.status==200) 
+			if (xhr.readyState==4&&xhr.status==200)
 				callback(xhr.response,id);
 		});
 		xhr.send(null);
-		
-		
+
+
 	} else {
 		//we are doing a search and basic auth is used
 		let xhr = new XMLHttpRequest();
 		let uri;
 		if (filter)
 			uri = "https://freesound.org/apiv2/search/text/?&format=json&filter=type:wav&query="+query;
-		else 
+		else
 			uri = "https://freesound.org/apiv2/search/text/?&format=json&query="+query;
 		xhr.open("GET",uri);
 		xhr.setRequestHeader('Authorization','Token '+client_secret);
 		xhr.addEventListener('load', function(e) {
-			if (xhr.readyState==4&&xhr.status==200) 
+			if (xhr.readyState==4&&xhr.status==200)
 				callback(xhr.responseText);
 		});
 		xhr.send(null);
-		
+
 	}
 
 }
@@ -104,9 +104,9 @@ function processSearch(response) {
 	let responseData = JSON.parse(response);
 	 searchResults = responseData.results;
 	 results_html="";
-	for (i in responseData.results) 
+	for (i in responseData.results)
 		results_html+="<p onclick=\"nameClicked(event)\" id="+responseData.results[i].id+" class=results>"+responseData.results[i].name+"</p>";
-	
+
 	document.getElementById("output").innerHTML=results_html;
 }
 
@@ -114,17 +114,18 @@ function processSearch(response) {
 function nameClicked(e) {
 	//grab id of sound from clicked search results element
 	let id = e.target.id;
-	
+
 	let auth = true;
-	
+
 	//if name was already clicked, return to unclicked state
 	if (document.getElementById(id).innerHTML.includes("audio")) {
 		$("#controller_"+id).remove();
-		
+        $(this).removeClass("active");
 	//otherwise send request to download sound and add loading gif
-	} else {	
+	} else {
 		//this check prevents multiple clicks from loading multiple of the same sound
 		if (!(document.getElementById(id).innerHTML.includes("loading.gif"))) {
+            $(this).addClass("active");
 			createRequest(auth,downloadSound,id,undefined);
 			let loading_text = "<div id=\"loading_sound\"><br><img width=50 height=50 src=\"images/loading.gif\"></img></div>"
 			document.getElementById(id).innerHTML+=loading_text;
@@ -149,22 +150,22 @@ function downloadSound(response,id) {
 
 
 //user selects sound to use in tonejs grainplayer
- function selectsound(e) {	
+ function selectsound(e) {
 	//disable the outer onclick event firing and only allow the inner
 	if (!e) var e = window.event;
     e.cancelBubble = true;
     if (e.stopPropagation) e.stopPropagation();
-	
+
 	//grab sound id from the element that fired the event
 	let id = e.target.id;
 	id = id.split("_")[1];
-	
+
 	//get position in the returned json using the id
 	let pos = 0;
-	for (i in searchResults) 
+	for (i in searchResults)
 		if (searchResults[i].id==id)
 			pos=i;
-		
+
 	//get the blob url of the sound clicked
 	let audio_controls = document.getElementById("controller_"+id).childNodes[0];
 	let src = audio_controls.childNodes[0];
@@ -174,12 +175,12 @@ function downloadSound(response,id) {
 	document.getElementById("Content").innerHTML = "";
 	document.getElementById("Content").innerHTML += "<div id=\"Sliders\"></div>";
 	buildplayer(url,searchResults[pos].name);
-	
+
 	//this function takes a url to a sound file/object and a name to display above it and then creates the tonejs grainplayer interface
-} 
+}
 
 function buildplayer(url,name) {
-	if (url=="") 
+	if (url=="")
 		$("#Content").css("pointer-events" ,"none");
 	else
 		$("#Content").css("pointer-events" ,"");
@@ -195,7 +196,7 @@ function buildplayer(url,name) {
 	//Interface.Loader();
 
 	$("#Sliders").append("<br><div id=\"soundname\">"+name+"</div><br>");
-	
+
 	Interface.Button({
 			text : "Start",
 			activeText : "Stop",
@@ -220,10 +221,10 @@ function buildplayer(url,name) {
 				link.setAttribute('download',filename);
 				var event = document.createEvent('MouseEvents');
 				event.initMouseEvent('click', true, true, window, 1, 0, 0, 0, 0, false, false, false, false, 0, null);
-				link.dispatchEvent(event);	
+				link.dispatchEvent(event);
 			},
 			end : function(){
-				
+
 			}
 		});
 	Interface.Slider({
@@ -245,7 +246,7 @@ function buildplayer(url,name) {
 			max : 1200,
 		});
 		$("#detune").before("<div class=\"silderStyle\">Detune</div><div id=\"detunevalue\" class=\"slidervalue\"></div>");
-		
+
 		Interface.Slider({
 			param : "grainSize",
 			name : "grainSize",
@@ -264,7 +265,7 @@ function buildplayer(url,name) {
 			max : 0.2,
 		});
 		$("#overlap").before("<div class=\"sliderStyle\">Overlap</div><div id=\"overlapvalue\" class=\"slidervalue\"></div>");
-		
+
 		Interface.Slider({
 			param : "decay",
 			name : "decay",
