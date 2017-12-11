@@ -31,9 +31,11 @@ input#query::-webkit-input-placeholder {
     height: 40px;
     width: 50px;
 	border:0px solid #69605d;
-	background-color:#429FE8;
+	background-color:#0779D1;
 	color:white;
 	border-radius:0 3px 3px 0;
+	position:relative;
+	top:-1px;
 }
 
 /*css for go button next to search box when mouse hovers over it*/
@@ -42,7 +44,7 @@ input#query::-webkit-input-placeholder {
     height: 40px;
     width: 50px;
 	border:0px solid gray;
-	background-color:#0779D1;
+	background-color:#429FE8;
 	color:white;
 	border-radius:0 3px 3px 0;
 }
@@ -145,4 +147,12 @@ input#query::-webkit-input-placeholder {
 .filetype .wav, .filetype .all {
 	background-color: #404040;
 	color: #F7F7F7;
+}
+.or-text {
+    display: inline;
+    background-color: #eee;
+    padding: 2px 8px;
+}
+.upload-text {
+	margin-bottom:5px;
 }
