@@ -31,7 +31,7 @@ input#query::-webkit-input-placeholder {
     height: 40px;
     width: 50px;
 	border:0px solid #69605d;
-	background-color:#69605d;
+	background-color:#429FE8;
 	color:white;
 	border-radius:0 3px 3px 0;
 }
@@ -42,8 +42,9 @@ input#query::-webkit-input-placeholder {
     height: 40px;
     width: 50px;
 	border:0px solid gray;
-	background-color:gray;
+	background-color:#0779D1;
 	color:white;
+	border-radius:0 3px 3px 0;
 }
 
 /*this is the css for a div that is the parent of the search box, go button and all filters and file upload*/
@@ -138,7 +139,7 @@ input#query::-webkit-input-placeholder {
 }
 
 .filetype input:checked + span {
-    background-color:lightblue;
+    background-color:#429FE8;
     color:#F7F7F7;
 }
 .filetype .wav, .filetype .all {
