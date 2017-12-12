@@ -230,6 +230,7 @@ function buildplayer(url,name) {
 		});
 	Interface.Slider({
 			param : "playbackRate",
+			name : "playbackRate",
 			parent : $("#Sliders"),
 			tone : player,
 			min : 0.5,
@@ -239,6 +240,7 @@ function buildplayer(url,name) {
 
 		Interface.Slider({
 			param : "detune",
+			name : "detune",
 			parent : $("#Sliders"),
 			tone : player,
 			min : -1200,
@@ -248,6 +250,7 @@ function buildplayer(url,name) {
 
 		Interface.Slider({
 			param : "grainSize",
+			name : "grainSize",
 			parent : $("#Sliders"),
 			tone : player,
 			min : 0.01,
@@ -256,6 +259,7 @@ function buildplayer(url,name) {
 		$("#grainSize").before("<div class=\"sliderStyle\">Grain Size</div><div id=\"grainSizevalue\" class=\"slidervalue\"></div>");
 		Interface.Slider({
 			param : "overlap",
+			name : "overlap",
 			parent : $("#Sliders"),
 			tone : player,
 			min : 0,
@@ -265,6 +269,7 @@ function buildplayer(url,name) {
 
 		Interface.Slider({
 			param : "decay",
+			name : "decay",
 			parent : $("#Sliders"),
 			tone : player,
 			min : 0.005,
