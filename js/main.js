@@ -121,12 +121,12 @@ function nameClicked(e) {
 	//if name was already clicked, return to unclicked state
 	if (document.getElementById(id).innerHTML.includes("audio")) {
 		$("#controller_"+id).remove();
-        $("p#"+id).removeClass("active");
+        $(this).removeClass("active");
 	//otherwise send request to download sound and add loading gif
 	} else {
 		//this check prevents multiple clicks from loading multiple of the same sound
 		if (!(document.getElementById(id).innerHTML.includes("loading.gif"))) {
-            $("p#"+id).addClass("active");
+            $(this).addClass("active");
 			createRequest(auth,downloadSound,id,undefined);
 			let loading_text = "<div id=\"loading_sound\"><br><img width=50 height=50 src=\"images/loading.gif\"></img></div>"
 			document.getElementById(id).innerHTML+=loading_text;
