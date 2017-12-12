@@ -104,17 +104,15 @@ Interface.Dragger = function(params){
 		this.element = $("<div>", {
 			"class" : "Dragger",
 			"id" : name
- +
-  			}).appendTo(this.container)
-  				.on("dragMove", this._ondrag.bind(this))
-  				.on("touchstart mousedown", this._onstart.bind(this))
-  				.on("dragEnd touchend mouseup", this._onend.bind(this));
-  
- -			this.name = $("<div>", {
- -				"id" : "Name",
- -				"text" : name
- -			}).appendTo(this.element);
-		
+		}).appendTo(this.container)
+			.on("dragMove", this._ondrag.bind(this))
+			.on("touchstart mousedown", this._onstart.bind(this))
+			.on("dragEnd touchend mouseup", this._onend.bind(this));
+
+		this.name = $("<div>", {
+			"id" : "Name",
+			"text" : name
+		}).appendTo(this.element);
 
 		this.element.draggabilly({
 			"axis" : this.axis,
