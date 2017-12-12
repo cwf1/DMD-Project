@@ -217,8 +217,6 @@ Interface.Slider = function(params){
 		 */
 		this.axis = params.axis || "x";
 
-		this.axis = params.axis || "x";
-
 		if (!params.element){
 
 			this.container = $("<div>", {
