@@ -42,14 +42,14 @@
       left: 50%;
       margin-left: -1.5px; }
   #Content .Dragger {
-    width: 80px;
-    height: 80px;
+    width: 40px;
+    height: 40px;
     position: absolute;
-    background-color: black;
-    border-radius: 50%;
+    background-color: #999999;
+    border-radius: 25%;
     z-index: 1;
     margin-top: -2px;
-    border: 2px solid white;
+    border: 2px solid #999999;
     cursor: -webkit-grab; }
     #Content .Dragger #Name {
       width: 100%;
@@ -69,9 +69,9 @@
       color: #1EDF3E; }
   #Content .Axis {
     position: absolute;
-    background-color: black;
+    background-color: #c8c8c8;
     width: 3px;
-    height: 3px;
+    height: 15px;
     top: 3px;
     left: 3px;
     border-radius: 1.5px;
