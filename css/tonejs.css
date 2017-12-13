@@ -50,6 +50,7 @@
     z-index: 1;
     margin-top: -2px;
     border: none;
+    top:37%;
     cursor: -webkit-grab; }
     #Content .Dragger #Name {
       display: none;}
