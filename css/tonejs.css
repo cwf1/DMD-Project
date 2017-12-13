@@ -75,7 +75,9 @@
     height: calc(100% - 6px); }
   #Content .Button {
     width: 94%;
-    background-color: #666;
+    background-color: #e7e7e7;
+    border: 1px solid #999;
+    font-weight: bold;
     margin: auto;
     height: 60px;
     line-height: 60px;
