@@ -72,12 +72,13 @@
     width: calc(100% - 6px); }
   #Content #yAxis {
     height: calc(100% - 6px); }
-#Content .Button {
+  #Content .Button {
     width: 94%;
-    background-color: #0779D1;
+    background-color: #e7e7e7;
+    border: 2px solid #999999;
     margin: auto;
-    height: 70px;
-    line-height: 70px;
+    height: 60px;
+    line-height: 60px;
     color: white;
     border-radius: 10px;
     cursor: pointer;
@@ -86,15 +87,14 @@
     cursor: pointer; }
   #Content .Button:hover {
     color: white;
-    background-color: #c8c8c8; }
+    background-color: rgba(153, 153, 153, 0.6); }
   #Content .Button:hover:active, #Content #Content .Button:hover:active.Active {
     color: #999999 }
   #Content .Button.Toggle.Active {
     box-sizing: border-box;
-    border: none;
     color: black;
     font-weight: bold;
-    background-color: #e7e7e7; }
+    background-color: rgba(153, 153, 153, 0.6); }
   #Content .Transport {
     width: 100%;
     height: 30px;
