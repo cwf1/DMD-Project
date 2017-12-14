@@ -1,11 +1,16 @@
 FreeSound and ToneJS project
 
-To get this to run a localserver will have to be deployed and the port needs to be 8080 because the callback url where freesound sends the auth codes is localhost:8080
 
-The root folder for the webserver should be the DMD-Project folder that is downloaded from this repo.
+This is a project using FreeSound and Tonejs API's for DMD-3035(Scripting For The Web) course at UConn Stamford.
 
-UPDATE
-This site is now hosted on github pages and if the localserver is used anyway, you will be redirected to the github hosted version unless already logged in.
+This website uitlizes FreeSound API to search for, listen to and download sounds. ToneJs provides a grain player that allows for mainpulation of a sound in a few different capacities. 
+
+The idea behind the project is to combine the two API's into one website and eventually web application with many more features.
+
+Currently sounds can be searched for, downloaded and loaded into the ToneJs grain player for manipulation. The only requirement is to have a FreeSound account which users will be prompted to make when visiting the site which is hosted on github pages( link at bottom.)
+
+The UI was improved by Stephen Rozo and Emily Serven who are Collaborators on the project.
+
+This is still a work in progress.
 
 https://cwf1.github.io/DMD-Project/index.html
-
